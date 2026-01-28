@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranvika Ayurveda | Natural Healing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fefae0; }
+        h1, h2 { font-family: 'Playfair Display', serif; color: #283618; }
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 100; align-items: center; justify-content: center; }
+        .modal.active { display: flex; }
+    </style>
+</head>
+<body>
+
+    <nav class="bg-white border-b p-4 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="font-bold text-xl text-green-800">PRANVIKA AYURVEDA</div>
+            <button onclick="toggleModal()" class="bg-green-700 text-white px-5 py-2 rounded-full font-bold shadow hover:bg-green-800 transition">Book Consultation</button>
+        </div>
+    </nav>
+
+    <header class="py-12 px-6 text-center max-w-4xl mx-auto">
+        <h1 class="text-3xl md:text-5xl mb-4">Holistic Healing with Ayurveda</h1>
+        <p class="text-lg text-gray-700">Certified MD and BAMS doctors for authentic treatments.</p>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 pb-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <article class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-orange-500 flex flex-col items-center text-center">
+            <img src="https://via.placeholder.com/150x100?text=Kidney+Disease" alt="Ayurvedic Kidney Treatment" class="mb-4 rounded-lg shadow-md">
+            <h2 class="text-xl font-bold mb-3">Ayurvedic Management of Kidney Disease</h2>
+            <p class="text-gray-600 leading-relaxed">
+                Ayurveda addresses kidney disorders as 'Mutravaha Srotas' imbalances. Herbs like Punarnava, Varun, and Gokshur help reduce creatinine levels and enhance kidney function naturally.
+            </p>
+        </article>
+
+        <article class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-orange-500 flex flex-col items-center text-center">
+            <img src="https://via.placeholder.com/150x100?text=Liver+Disease" alt="Ayurvedic Liver Treatment" class="mb-4 rounded-lg shadow-md">
+            <h2 class="text-xl font-bold mb-3">Liver Detoxification & Fatty Liver Solutions</h2>
+            <p class="text-gray-600 leading-relaxed">
+                The liver (Yakrit) is a key site of Pitta. Herbs like Kutki and Bhumyamalaki help detoxify the liver, improving conditions like fatty liver and cirrhosis naturally.
+            </p>
+        </article>
+
+        <article class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-orange-500 flex flex-col items-center text-center">
+            <img src="https://via.placeholder.com/150x100?text=Cancer+Support" alt="Ayurvedic Cancer Support" class="mb-4 rounded-lg shadow-md">
+            <h2 class="text-xl font-bold mb-3">Ayurvedic Support in Cancer Care</h2>
+            <p class="text-gray-600 leading-relaxed">
+                Ayurveda emphasizes building 'Ojas' (immunity). Through Rasayana therapy, we aid in rejuvenating body cells and mitigating the side effects of conventional cancer treatments.
+            </p>
+        </article>
+
+        <article class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-orange-500 flex flex-col items-center text-center">
+            <img src="https://via.placeholder.com/150x100?text=Diabetes+Control" alt="Ayurvedic Diabetes Treatment" class="mb-4 rounded-lg shadow-md">
+            <h2 class="text-xl font-bold mb-3">Natural Diabetes (Sugar) Management</h2>
+            <p class="text-gray-600 leading-relaxed">
+                Diabetes, or 'Prameha,' is managed by improving 'Agni' (metabolism). Natural compounds like Vijaysar and Karela, combined with diet, help maintain stable blood sugar levels.
+            </p>
+        </article>
+    </main>
+
+    <div id="bookingModal" class="modal px-4">
+        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 relative">
+            <button onclick="toggleModal()" class="absolute top-4 right-4 text-gray-400 text-2xl">&times;</button>
+            <h2 class="text-2xl text-center font-bold mb-6">Book Your Consultation</h2>
+            
+            <form action="https://formspree.io/f/your-id-here" method="POST" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Patient Name</label>
+                    <input type="text" name="name" placeholder="Enter Full Name" required class="w-full p-3 bg-gray-50 border rounded outline-none focus:ring-2 focus:ring-green-600">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">WhatsApp Number</label>
+                    <input type="tel" name="whatsapp" placeholder="Enter 10-digit number" required class="w-full p-3 bg-gray-50 border rounded outline-none focus:ring-2 focus:ring-green-600">
+                </div>
+                
+                <div class="flex items-start space-x-3 bg-blue-50 p-3 rounded-lg">
+                    <input type="checkbox" name="consent" id="consent" required class="mt-1 h-5 w-5">
+                    <label for="consent" class="text-xs text-blue-900 leading-tight">
+                        I agree to receive marketing emails, messages, WhatsApp, and calls from Pranvika Ayurveda as per TRAI guidelines.
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 rounded uppercase tracking-wide shadow-md transition">
+                    Request Consultation
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bg-green-900 text-white py-10 px-6 text-center text-sm">
+        <p class="font-bold mb-2">PRANVIKA AYURVEDA</p>
+        <p>Airport Road, Gmada Aerocity, Mohali, Punjab 140306</p>
+        <p class="mt-2">Phone: 9779908823 | Email: pranvikaayurveda@gmail.com</p>
+    </footer>
+
+    <script>
+        function toggleModal() {
+            document.getElementById('bookingModal').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
